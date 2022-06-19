@@ -29,7 +29,8 @@ def create_user(db: Session, user: schemas.UserCreate):
     db.refresh(db_user)
     return db_user
 
-def delete_user(db: Session, user_id: int):
-    #TODO delete
-    pass
+def delete_user(db: Session, user: schemas.User):
+    db.delete(user)
+    db.commit()
+    return
 
